@@ -47,7 +47,7 @@ function Register() {
     onSubmit: async (values) => {
       const { confirmPassword, ...user } = values;
 
-      const result = await dispatch(await dispatch(registerAsync(user)));
+      const result = await dispatch(registerAsync(user));
 
       if (registerAsync.fulfilled.match(result)) {
         toast.success(result.payload);
