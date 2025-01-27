@@ -13,7 +13,7 @@ function CustomerProfile() {
     dispatch(getInformationProfileAsync());
   }, [dispatch]);
 
-  if ((loading && !user) || balance === 0) {
+  if ((loading && !user) || !balance) {
     return (
       <div className="w-screen h-screen flex justify-center items-center">
         <CircularProgress
