@@ -22,6 +22,10 @@ function ServiceTopUp() {
   const navigate = useNavigate();
   const { service_code } = useParams();
   const { services, loading } = useSelector((state) => state.information);
+  const { loading: transactionLoading } = useSelector(
+    (state) => state.transaction
+  );
+
   const service = services?.find(
     (service) =>
       service.service_code.toLowerCase() === service_code.toLowerCase()
@@ -181,7 +185,7 @@ function ServiceTopUp() {
 
         <Button
           type="submit"
-          disabled={!formik.values.nominal}
+          disabled={!formik.values.nominal || transactionLoading}
           variant="contained"
           sx={{
             bgcolor: "red",
@@ -193,12 +197,11 @@ function ServiceTopUp() {
           }}
           className="w-full h-10 text-white"
         >
-          {/* {loading ? (
+          {transactionLoading ? (
             <CircularProgress size="1.5rem" color="white" />
           ) : (
-            "Top Up"
-          )} */}
-          Bayar
+            "Bayar"
+          )}
         </Button>
       </form>
     </CustomerLayout>

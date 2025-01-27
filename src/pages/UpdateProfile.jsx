@@ -262,6 +262,7 @@ function UpdateProfile({ onLogout }) {
             <Button
               type="submit"
               variant="contained"
+              disabled={loading}
               sx={{
                 bgcolor: "red",
                 "&:hover": {

@@ -162,7 +162,7 @@ function TopUp() {
 
           <Button
             type="submit"
-            disabled={!formik.values.nominal}
+            disabled={!formik.values.nominal || loading}
             variant="contained"
             sx={{
               bgcolor: "red",
