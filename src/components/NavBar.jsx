@@ -31,7 +31,7 @@ function NavBar() {
             alignItems: "center",
             cursor: "pointer",
           }}
-          onClick={() => navigate("/home")}
+          onClick={() => navigate("/")}
         >
           <img src={logo} className="w-7 h-7" />
 

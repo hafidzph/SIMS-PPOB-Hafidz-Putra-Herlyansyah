@@ -25,7 +25,7 @@ function App() {
   const handleLogin = (token) => {
     localStorage.setItem("token", token);
     setIsLoggedIn(true);
-    navigate("/home");
+    navigate("/");
   };
 
   const handleLogout = () => {
@@ -39,11 +39,11 @@ function App() {
       <Routes>
         <Route
           path="/"
-          element={<Navigate to={isLoggedIn ? "/home" : "/auth/login"} />}
+          element={<Navigate to={isLoggedIn ? "/" : "/auth/login"} />}
         />
 
         <Route element={<ProtectedRoute />}>
-          <Route path="/home" element={<Home />} />
+          <Route index path="/" element={<Home />} />
           <Route path="/top-up" element={<TopUp />} />
           <Route path="/transaction-history" element={<TransactionHistory />} />
           <Route

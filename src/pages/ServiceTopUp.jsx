@@ -37,7 +37,7 @@ function ServiceTopUp() {
           values.nominal
         )}?</span>`,
         showCancelButton: true,
-        confirmButtonText: "Ya, lanjutkan Top Up",
+        confirmButtonText: "Ya, lanjutkan Bayar",
         cancelButtonText: "Batalkan",
         confirmButtonColor: "#D32F2F",
         cancelButtonColor: "#9E9E9E",
@@ -153,7 +153,7 @@ function ServiceTopUp() {
           className="w-full"
           type="text"
           value={formattedMoney(formik.values.nominal)}
-          placeholder="Masukkan nominal top up"
+          placeholder="Masukkan nominal"
           disabled
           sx={{
             "& .MuiInputBase-input.Mui-disabled": {
